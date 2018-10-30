@@ -1,0 +1,25 @@
+<h1>Wowt#index</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Word</th>
+      <th>Pronunciation</th>
+      <th>Part of Speech</th>
+      <th>Definition</th>
+      <th>Etymology</th>
+      <th>First Appeared</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @wowts.each do |w| %>
+      <tr>
+        <td><%= w.roman %></td>
+        <td><%= w.pronunciation %></td>
+        <td><%= w.part_of_speech %></td>
+        <td><%= w.definition&.html_safe %></td>
+        <td><%= w.etymology&.html_safe %></td>
+        <td><%= w.first_appeared&.html_safe %>
+      </tr>
+    <% end %>
+  </tbody>
+<table>
